@@ -1,0 +1,56 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Logic Circuit" id="LogicCircuit">
+    <mxGraphModel dx="1041" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- AND Gate -->
+        <mxCell id="2" value="AND" style="shape=mxgraph.electrical.logic_gates.and;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- OR Gate -->
+        <mxCell id="3" value="OR" style="shape=mxgraph.electrical.logic_gates.or;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="320" y="160" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- NOT Gate -->
+        <mxCell id="4" value="NOT" style="shape=mxgraph.electrical.logic_gates.not;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="480" y="160" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Input A -->
+        <mxCell id="5" value="A" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Input B -->
+        <mxCell id="6" value="B" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Connection A to AND -->
+        <mxCell id="7" edge="1" parent="1" source="5" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Connection B to AND -->
+        <mxCell id="8" edge="1" parent="1" source="6" target="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Output from AND to OR -->
+        <mxCell id="9" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Output from OR to NOT -->
+        <mxCell id="10" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
