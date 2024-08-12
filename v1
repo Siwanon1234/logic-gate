@@ -1,52 +1,89 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Logic Circuit" id="LogicCircuit">
+  <diagram name="2.1 (A * B) + (C * B') + A'">
     <mxGraphModel dx="1041" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <!-- AND Gate -->
-        <mxCell id="2" value="AND" style="shape=mxgraph.electrical.logic_gates.and;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="160" y="160" width="80" height="80" as="geometry" />
-        </mxCell>
-
-        <!-- OR Gate -->
-        <mxCell id="3" value="OR" style="shape=mxgraph.electrical.logic_gates.or;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="320" y="160" width="80" height="80" as="geometry" />
-        </mxCell>
-
-        <!-- NOT Gate -->
-        <mxCell id="4" value="NOT" style="shape=mxgraph.electrical.logic_gates.not;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="480" y="160" width="80" height="80" as="geometry" />
-        </mxCell>
-
         <!-- Input A -->
-        <mxCell id="5" value="A" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="180" width="40" height="40" as="geometry" />
+        <mxCell id="A" value="A" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="40" height="40" as="geometry" />
         </mxCell>
 
         <!-- Input B -->
-        <mxCell id="6" value="B" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="240" width="40" height="40" as="geometry" />
+        <mxCell id="B" value="B" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="40" height="40" as="geometry" />
         </mxCell>
 
-        <!-- Connection A to AND -->
-        <mxCell id="7" edge="1" parent="1" source="5" target="2">
+        <!-- Input C -->
+        <mxCell id="C" value="C" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- NOT B -->
+        <mxCell id="NOT_B" value="NOT B" style="shape=mxgraph.electrical.logic_gates.not;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- AND A * B -->
+        <mxCell id="AND_AB" value="AND (A * B)" style="shape=mxgraph.electrical.logic_gates.and;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- AND C * NOT B -->
+        <mxCell id="AND_C_NOTB" value="AND (C * NOT B)" style="shape=mxgraph.electrical.logic_gates.and;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="280" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- OR AB + CNOTB -->
+        <mxCell id="OR_AB_CNOTB" value="OR (AB + CNOTB)" style="shape=mxgraph.electrical.logic_gates.or;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="400" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- NOT A -->
+        <mxCell id="NOT_A" value="NOT A" style="shape=mxgraph.electrical.logic_gates.not;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="160" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- OR Final -->
+        <mxCell id="OR_FINAL" value="OR (Final)" style="shape=mxgraph.electrical.logic_gates.or;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="con1" edge="1" parent="1" source="B" target="NOT_B">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Connection B to AND -->
-        <mxCell id="8" edge="1" parent="1" source="6" target="2">
+        <mxCell id="con2" edge="1" parent="1" source="A" target="AND_AB">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Output from AND to OR -->
-        <mxCell id="9" edge="1" parent="1" source="2" target="3">
+        <mxCell id="con3" edge="1" parent="1" source="B" target="AND_AB">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Output from OR to NOT -->
-        <mxCell id="10" edge="1" parent="1" source="3" target="4">
+        <mxCell id="con4" edge="1" parent="1" source="C" target="AND_C_NOTB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="con5" edge="1" parent="1" source="NOT_B" target="AND_C_NOTB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="con6" edge="1" parent="1" source="AND_AB" target="OR_AB_CNOTB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="con7" edge="1" parent="1" source="AND_C_NOTB" target="OR_AB_CNOTB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="con8" edge="1" parent="1" source="OR_AB_CNOTB" target="NOT_A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="con9" edge="1" parent="1" source="NOT_A" target="OR_FINAL">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -54,3 +91,4 @@
     </mxGraphModel>
   </diagram>
 </mxfile>
+
